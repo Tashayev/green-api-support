@@ -6,12 +6,18 @@ import {
   Terminal,
   Wifi,
 } from "lucide-react"
-import { MethodButton } from "./components/ui"
-import { CredentialsCard } from "./components/CredentialsCard"
-import { MessageCard } from "./components/MessageCard"
-import { FileCard } from "./components/FileCard"
-import { ResponsePanel } from "./components/ResponsePanel"
-import { useApiCall, useCredentials, useInstanceState } from "./components/hooks"
+import {
+  MethodButton,
+  CredentialsCard,
+  MessageCard,
+  FileCard,
+  ResponsePanel,
+} from "./components/ui"
+import {
+  useApiCall,
+  useCredentials,
+  useInstanceState,
+} from "./components/hooks"
 import { buildEndpoint, describeInstance } from "./components/api"
 import {
   buildSendFileBody,
@@ -35,17 +41,19 @@ export function App() {
 
   const endpoint = useMemo(
     () => (ready ? buildEndpoint(idInstance) : ""),
-    [idInstance, ready]
+    [idInstance, ready],
   )
 
   const getSettings = () =>
     call("getSettings", () =>
-      fetch(`${endpoint}/getSettings/${encodeURIComponent(apiToken.trim())}`)
+      fetch(`${endpoint}/getSettings/${encodeURIComponent(apiToken.trim())}`),
     )
 
   const getStateInstance = () =>
     call("getStateInstance", () =>
-      fetch(`${endpoint}/getStateInstance/${encodeURIComponent(apiToken.trim())}`)
+      fetch(
+        `${endpoint}/getStateInstance/${encodeURIComponent(apiToken.trim())}`,
+      ),
     )
 
   const sendMessage = () => {
@@ -60,7 +68,7 @@ export function App() {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ chatId: cid.value, message: msg.value }),
-      })
+      }),
     )
   }
 
@@ -79,11 +87,14 @@ export function App() {
     })
 
     return call("sendFileByUrl", () =>
-      fetch(`${endpoint}/sendFileByUrl/${encodeURIComponent(apiToken.trim())}`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(body),
-      })
+      fetch(
+        `${endpoint}/sendFileByUrl/${encodeURIComponent(apiToken.trim())}`,
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(body),
+        },
+      ),
     )
   }
 
@@ -107,12 +118,12 @@ export function App() {
           {!ready
             ? "Waiting for credentials"
             : state.kind === "checking"
-            ? "Checking instance…"
-            : state.kind === "ok"
-            ? stateInfo.label
-            : state.kind === "error"
-            ? stateInfo.label
-            : "Instance credentials ready"}
+              ? "Checking instance…"
+              : state.kind === "ok"
+                ? stateInfo.label
+                : state.kind === "error"
+                  ? stateInfo.label
+                  : "Instance credentials ready"}
         </div>
       </header>
 

@@ -1,5 +1,5 @@
 import { MessageSquare, Send } from "lucide-react"
-import { ActionButton, Field } from "./ui"
+import { ActionButton, Field } from "."
 
 export function MessageCard({
   chatId,

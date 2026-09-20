@@ -1,5 +1,5 @@
 import { FileUp } from "lucide-react"
-import { ActionButton, Field } from "./ui"
+import { ActionButton, Field } from "."
 
 export function FileCard({
   chatId,

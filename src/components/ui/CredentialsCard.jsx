@@ -5,8 +5,8 @@ import {
   RefreshCw,
   Settings2,
 } from "lucide-react"
-import { Field } from "./ui"
-import { describeInstance } from "./api"
+import { Field } from "."
+import { describeInstance } from "../api"
 
 export function CredentialsCard({
   idInstance,
