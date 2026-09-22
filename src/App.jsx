@@ -6,7 +6,9 @@ import {
   MessageCard,
   FileCard,
   ResponsePanel,
+  MethodRow,
 } from "./components/features"
+import { HelpNote } from "./components/ui"
 import { useApiCall, useCredentials, useInstanceState } from "./hooks"
 import { buildEndpoint, describeInstance } from "./services/api"
 
@@ -76,7 +78,7 @@ export function App() {
             onCopy={copy}
             onClear={clear}
           />
-          <MethodsRow
+          <MethodRow
             loading={loading}
             onGetSettings={handleGetSettings}
             onGetState={handleGetStateInstance}
