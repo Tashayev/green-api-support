@@ -6,7 +6,7 @@ import {
   Settings2,
 } from "lucide-react"
 import { Field } from "../ui"
-import { describeInstance } from "../api"
+import { describeInstance } from "../../services/api"
 
 export function CredentialsCard({
   idInstance,

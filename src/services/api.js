@@ -1,4 +1,4 @@
-import { API_URL, FALLBACK_FILE_NAME } from "./constants"
+import { API_URL, FALLBACK_FILE_NAME } from "../utils/constants"
 
 export function buildEndpoint(idInstance) {
   return `${API_URL}/waInstance${idInstance.trim()}`

@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react"
-import { buildEndpoint, explainHttpError } from "../api"
+import { buildEndpoint, explainHttpError } from "../services/api"
 
 export function useInstanceState(idInstance, apiToken, ready) {
   const [state, setState] = useState({ kind: "idle", value: null, hint: "" })

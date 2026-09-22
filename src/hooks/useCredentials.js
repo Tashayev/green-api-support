@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { STORAGE_KEY } from "../constants"
+import { STORAGE_KEY } from "../utils/constants"
 
 export function useCredentials() {
   const [idInstance, setIdInstance] = useState("")
