@@ -1,6 +1,5 @@
-import { Loader2
-  
- } from "lucide-react"
+import { Loader2 } from "lucide-react"
+
 export function ActionButton({ children, icon, loading, onClick }) {
   return (
     <button className="action-button" onClick={onClick} disabled={loading}>
