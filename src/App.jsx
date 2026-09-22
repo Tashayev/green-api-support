@@ -6,7 +6,7 @@ import {
   MessageCard,
   FileCard,
   ResponsePanel,
-} from "./components/feats"
+} from "./components/features"
 import { useApiCall, useCredentials, useInstanceState } from "./hooks"
 import { buildEndpoint, describeInstance } from "./services/api"
 
