@@ -24,7 +24,7 @@ import {
   validateChatId,
   validateFileUrl,
   validateMessage,
-} from "./components/validators"
+} from "./utils/validators"
 
 export function App() {
   const { idInstance, apiToken, setIdInstance, setApiToken, ready } =

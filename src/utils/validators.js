@@ -1,4 +1,4 @@
-import { CHAT_ID_RE } from "./constants"
+import { CHAT_ID_RE } from "../components/constants"
 import { getFileName } from "./api"
 
 /**
